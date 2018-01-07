@@ -1,4 +1,4 @@
-package Alien::Libcmark_gfm;
+package Alien::libcmark_gfm;
 
 use strict;
 use warnings;

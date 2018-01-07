@@ -9,10 +9,8 @@ plugin 'PkgConfig' => (
 
 share {
   meta->prop->{out_of_source} = 1;
-  meta->prop->{start_url} = 'https://github.com/github/cmark.git';
-  plugin 'Download::Git' =>(
-    version => qr/^\d+.\d+.\d+\.gfm\.(\d+)/,
-  );
+  meta->prop->{start_url} = 'https://github.com/github/cmark.git#master';
+  plugin 'Download::Git';
   plugin 'Build::CMake';
 
   build [
