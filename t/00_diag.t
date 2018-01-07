@@ -10,7 +10,6 @@ my %modules;
 my $post_diag;
 
 $modules{$_} = $_ for qw(
-  Alien::Base
   Alien::Build
   Alien::Build::MM
   Alien::Build::Plugin::Build::CMake
@@ -18,19 +17,11 @@ $modules{$_} = $_ for qw(
   Alien::Build::Plugin::Extract::Directory
   Alien::Build::Plugin::Fetch::Git
   Alien::Build::Plugin::Prefer::SortVersions
-  Alien::xz
   ExtUtils::MakeMaker
-  FindBin
-  QA::Util
-  Test2::V0
-  Test::Alien
-  Test::More
-  constant
-  lib
 );
 
 $post_diag = sub {
-  require Alien::xz;
+  require Alien::libcmark_gfm;
   diag "version        = ", Alien::libcmark_gfm->config('version');
   diag "cflags         = ", Alien::libcmark_gfm->cflags;
   diag "cflags_static  = ", Alien::libcmark_gfm->cflags_static;
